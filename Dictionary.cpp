@@ -52,12 +52,12 @@ bool Dictionary::SearchDictionary(std::string Word)
 	{
 		if (n->Key == Word)
 		{
-			std::cout << "Word found" << std::endl;
+			std::cout << "True" << std::endl;
 			return true;
 		}
 		n = n->Next;
 	}
-	std::cout << "Word not found" << std::endl;
+	std::cout << "False" << std::endl;
 	return false;
 }
 
@@ -75,6 +75,26 @@ void Dictionary::PrintDictionary()
 	}
 }
 
+void Dictionary::PrintAllSimilarWords(std::string Word)
+{
+	if (Word.size() == 1)
+	{
+		std::cout << "No similar words." << std::endl;
+		return;
+	}
+	std::cout << "Similar words to " << Word << ":" << std::endl;
+	int place = ((int)Word[0]) % 26;
+	Node* n = &dictionary[place].Head;
+	while (n != nullptr)
+	{
+		if (n->Key != Word && n->Key[1] == Word[1])
+		{
+			std::cout<< n->Key << std::endl;
+		}
+		n = n->Next;
+	}
+}
+
 std::string Dictionary::FindPossibleMatch(std::string Word)
 {
 	double Score = 0.0;
@@ -83,6 +103,7 @@ std::string Dictionary::FindPossibleMatch(std::string Word)
 	double LRRecipricol;
 	int MatchingCharacters;
 	int MatchingPosition;
+	int PMMatches = 0;
 	std::string PossibleMatch;
 	int place = ((int)Word[0]) % 26;
 	Node* n = &dictionary[place].Head;
@@ -119,8 +140,15 @@ std::string Dictionary::FindPossibleMatch(std::string Word)
 		{
 			PossibleMatch = n->Key;
 			Score = TestScore;
+			PMMatches = MatchingCharacters;
 		}
 		n = n->Next;
+	}
+	int MaxScore = 1 + (PossibleMatch.size() << 1);
+	//0.6 is arbitrary, I just decided 60% accuracy is enough to decide a similar word or not
+	if (Score <= 0.6 * MaxScore)
+	{
+		PossibleMatch = "";
 	}
 	return PossibleMatch;
 }

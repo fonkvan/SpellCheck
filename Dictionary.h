@@ -20,6 +20,7 @@ public:
 	void BuildDictionary(std::string FileName);
 	bool SearchDictionary(std::string Word);
 	void PrintDictionary();
+	void PrintAllSimilarWords(std::string Word);
 	std::string FindPossibleMatch(std::string Word);
 	std::string RemoveCharFromWord(std::string Word, int i);
 };
