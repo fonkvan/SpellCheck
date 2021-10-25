@@ -1,0 +1,4 @@
+﻿  SpellCheck.cpp
+C:\Users\vilif\source\repos\SpellCheck\TimeInterval.h(74,19): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\vilif\source\repos\SpellCheck\SpellCheck.cpp(18,20): warning C4018: '<': signed/unsigned mismatch
+  SpellCheck.vcxproj -> C:\Users\vilif\source\repos\SpellCheck\Debug\SpellCheck.exe
