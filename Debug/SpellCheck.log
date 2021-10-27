@@ -1,5 +1,5 @@
-﻿  SpellCheck.cpp
-C:\Users\vilif\source\repos\SpellCheck\TimeInterval.h(74,19): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\vilif\source\repos\SpellCheck\SpellCheck.cpp(19,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\vilif\source\repos\SpellCheck\SpellCheck.cpp(40,22): warning C4018: '<': signed/unsigned mismatch
+﻿  Dictionary.cpp
+C:\Users\vilif\source\repos\SpellCheck\Dictionary.cpp(123,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\vilif\source\repos\SpellCheck\Dictionary.cpp(125,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\vilif\source\repos\SpellCheck\Dictionary.cpp(159,20): warning C4018: '<': signed/unsigned mismatch
   SpellCheck.vcxproj -> C:\Users\vilif\source\repos\SpellCheck\Debug\SpellCheck.exe

@@ -19,6 +19,7 @@ void Dictionary::BuildDictionary(std::string FileName)
 			//modulo first char, find place in table, if head key is "" then make key word, else
 			//look until the Next is nullptr, create new Node there, and store key into the new node
 			int place = ((int)Word[0])%26;
+			Word.erase(Word.find_last_not_of(" \n\r\t\f\v") + 1);
 			Node* n = &dictionary[place].Head;
 			if (n->Key == "")
 			{
